@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Neural Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.sound.min.js"></script>
+    <script src='lib/util/getDeterminantArrays.js'></script>
+    <script src='lib/matrixLibrary.js'></script>
+    <script src='mainRegression.js'></script>
+
+</head>
+
+<body>
+    <h1 class="title">Polynomial Regression Simulator</h1>
+    <div class="mainBody">
+        <div class='selection'>
+            <h5>Select Type of Regression:</h5>
+            <button id="linear" onclick="changeRegression(this.id)">Linear</button>
+            <button id="quadratic" onclick="changeRegression(this.id)">Quadratic</button>
+            <button id="cubic" onclick="changeRegression(this.id)">Cubic</button>
+            <button id="clear" onclick='clearCanvas()' disabled>clear</button>
+
+            <h5>Select Method for Calculating Best-Fit Line:</h5>
+            <button id="formula" onclick="changeMethod(this.id)" disabled>Regression Formula</button>
+            <button id="gradient" onclick="changeMethod(this.id)" disabled>Gradient Descent</button>
+            <h5>Regression Output:</h5>
+            <div class='coefficients'>
+                <p class='row1'></p>
+                <p class='row2'></p>
+                <p class='row3'></p>
+                <p class='row4'></p>
+            </div>
+        </div>
+
+        <div id='canvas'>
+        </div>
+    </div>
+</body>
+
+</html>
