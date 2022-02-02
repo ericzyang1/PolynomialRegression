@@ -1,13 +1,3 @@
-// General Formula: https://muthu.co/maths-behind-polynomial-regression/
-// Find inverse: https://www.youtube.com/watch?v=nNOz6Ez8Fn4&t=118s
-// Find determinant: https://www.youtube.com/watch?v=fWzUwrt1Z0s
-// Test data 1: https://www.youtube.com/watch?v=Z_N4ATiO7S0
-// GD with Momentum: https://medium.com/optimization-algorithms-for-deep-neural-networks/gradient-descent-with-momentum-dce805cd8de8
-// Adam algorithm: https://ruder.io/optimizing-gradient-descent/index.html#adam
-// Everything about Adam: https://medium.com/@nishantnikhil/adam-optimizer-notes-ddac4fd7218
-// Adam - very thorough: https://towardsdatascience.com/understanding-gradient-descent-and-adam-optimization-472ae8a78c10
-// Original Adam paper: https://arxiv.org/pdf/1412.6980.pdf
-
 let regressionType = "";
 let methodType = "";
 let equation;
