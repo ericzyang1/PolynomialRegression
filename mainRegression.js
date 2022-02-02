@@ -1,5 +1,3 @@
-//TESTING
-
 let regressionType = "";
 let methodType = "";
 let equation;
@@ -73,22 +71,6 @@ function clearCanvas() {
   document.getElementById("gradient").disabled = true;
 }
 
-// let learning_rate = 0.05;
-// let velocityA = 0;
-// let velocityB = 0;
-// let velocityC = 0;
-// let velocityD = 0;
-// let beta1 = 0.9;
-
-// let rmsA = 0;
-// let rmsB = 0;
-// let rmsC = 0;
-// let rmsD = 0;
-// let beta2 = 0.99;
-// let epsilon = Math.pow(10, -16);
-
-// let t = 1;
-
 let learning_rate = 0.3;
 let velocityA = 0;
 let velocityB = 0;
@@ -106,11 +88,7 @@ let t = 1;
 //Create canvas and put it in a div
 function setup() {
   let div = createCanvas(350, 330); //draw canvas
-  // background(0, 60, 0); //set background color
-  // let x = (windowWidth - width) / 2;
-  // var y = (windowHeight - height) / 2;
   div.parent("canvas");
-  // div.position(x, y);
 }
 
 //select method of regression - called repeatedly
@@ -140,9 +118,6 @@ function draw() {
       quadraticGradientDescentWithADAM(); //set a,b,c
     if (regressionType == "cubic" && methodType == "gradient")
       cubicRegression(); //set a,b,c,d
-
-    // gradientDescentWithADAM();
-    // gradientDescentWithMomentum();
 
     drawCurve(); //draw bestfit line
   }
