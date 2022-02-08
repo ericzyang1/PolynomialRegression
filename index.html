@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Neural Network</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="mainRegression.js"></script>
     <script src="lib/p5.min.js"></script>
     <script src="lib/p5.sound.min.js"></script>
     <script src='lib/util/getDeterminantArrays.js'></script>
     <script src='lib/matrixLibrary.js'></script>
-    <script src='mainRegression.js'></script>
-
+    <title>Polynomial Regression Simulator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <h1 class="title">Polynomial Regression Simulator</h1>
+    <h1 class="title">Polynomial Regression Simulator <i data-modal-target="#modal" class="bi bi-question-circle-fill"></i></h1>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">About Polynomial Regression Simulator</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          This simulator takes in 1) a degree of egression, 2) method of calculation, and 3) user-inputted data points to generate a line of best-fit.
+          <br><br>
+          The Least Squares method calculates optimal coefficients through mathematical forumulas aimed at reducing the sum of the squares of the offsets (residual part) of the points from the curve. <br><br>While Gradient Descent is a machine learning technical where coefficients are initialized randomly, and then fine-tuned to minimumize of the cost function, thus optimizing towards the best-fit line through a series of adjustments.<br><br>
+          <u><b>Instructions:</b></u>
+          <br><br>
+          Step 1: Select the degree of regression (linear, quadratic, or cubic) or type of curve to fit to.
+          <br><br>
+          Step 2: Select the method to use for calculating the best-fit line.
+          <br><br>
+          Step 3: Click to draw at least 3 dots in the canvas to generate the best fit line. The line will dynamically update as more data points are added.
+        </div>
+      </div>
+      <div id="overlay"></div>
     <div class="mainBody">
         <div class='selection'>
-            <h5>Select Type of Regression:</h5>
+            <h5><span style="color: darkgreen">Step 1)</span> Select Degree of Regression:</h5>
             <button id="linear" onclick="changeRegression(this.id)">Linear</button>
             <button id="quadratic" onclick="changeRegression(this.id)">Quadratic</button>
             <button id="cubic" onclick="changeRegression(this.id)">Cubic</button>
             <button id="clear" onclick='clearCanvas()' disabled>clear</button>
 
-            <h5>Select Method for Calculating Best-Fit Line:</h5>
-            <button id="formula" onclick="changeMethod(this.id)" disabled>Regression Formula</button>
+            <h5><span style="color: darkgreen">Step 2)</span> Select Method of Calculation:</h5>
+            <button id="formula" onclick="changeMethod(this.id)" disabled>Least Squares</button>
             <button id="gradient" onclick="changeMethod(this.id)" disabled>Gradient Descent</button>
             <h5>Regression Output:</h5>
             <div class='coefficients'>
@@ -38,10 +56,15 @@
                 <p class='row4'></p>
             </div>
         </div>
-
-        <div id='canvas'>
+        <div>
+            <h5><span style="color: darkgreen">Step 3) </span>Click on the canvas to place datapoints</h5>
+            <div id='canvas'>
+            </div>
         </div>
     </div>
+    <footer>
+      <div>Eric Yang</div>
+      <div>ericzyang1@gmail.com</div>
+    </footer>
 </body>
-
 </html>

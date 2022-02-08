@@ -3,16 +3,95 @@ body {
   background-color: #fff;
 }
 
+i {
+  font-size: 20px;
+  color: darkgreen;
+  cursor: pointer;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 52%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid darkgreen;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 60%;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 20px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: darkgreen;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 0.9rem;
+  padding-top: 0px;
+  padding: 20px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 h1 {
+  font-size: 38px;
   text-align: center;
   font-weight: 500;
 }
 
 h5 {
+  font-size: 18px;
   font-weight: 400;
 }
 
 button {
+  font-size: 15px;
   text-align: center;
   font-family: "Signika Negative", sans-serif;
   font-weight: 300;
@@ -44,14 +123,14 @@ canvas {
 }
 
 .coefficients {
+  font-size: 18px;
   width: 70%;
-  height: 100px;
+  height: 130px;
   background-color: lightgray;
   border-radius: 5px;
   padding: 3%;
   font-weight: 300;
   white-space: pre;
-  font-size: 0.9em;
 }
 
 .mainBody {
@@ -64,8 +143,9 @@ canvas {
   border: 2px red;
 }
 
-/* .canvas {
-  width: 300px;
-  height: 300px;
-  /* border: 2px solid red; */
-/* } */
+footer {
+  text-align: center;
+  position: fixed;
+  left: 45%;
+  bottom: 5%;
+}
